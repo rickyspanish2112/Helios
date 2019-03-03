@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListService } from './listservice.service';
 import { MAT_DATE_LOCALE } from '@angular/material';
 
-import { DeclarationComponent } from './components/main-shell/containers/declaraion-shell/declaration.component';
+import { DeclarationShellComponent } from './components/main-shell/containers/declaraion-shell/declaration-shell.component';
 import { DeclarationTypeComponent } from './components/main-shell/components/declaration/declaraion-type/declaration-type.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -24,7 +24,7 @@ import { DeclarationTypeEffects } from './components/main-shell/components/decla
 const routes: Routes = [
   { path: '', component: HeliosShellComponent,
     children: [
-      { path: 'declaraion', component: DeclarationComponent },
+      { path: 'declaraion', component: DeclarationShellComponent },
       { path: '', component: MainShellComponent }
     ] },
   { path: '**', redirectTo: '' }
@@ -36,7 +36,7 @@ const routes: Routes = [
     MainShellComponent,
     SidenavComponent,
     ToolbarComponent,
-    DeclarationComponent,
+    DeclarationShellComponent,
     DeclarationTypeComponent
   ],
 

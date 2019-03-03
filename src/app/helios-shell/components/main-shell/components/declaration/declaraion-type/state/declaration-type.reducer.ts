@@ -31,12 +31,7 @@ const initialState: DeclarationTypeState = {
 };
 
 const getDeclarationTypeState = createFeatureSelector<DeclarationTypeState>('declarationType');
-/*
-export const getDisplayDeclarationType = createSelector(
-  getDeclarationTypeState,
-  state => state.showDeclarationTypes
-);
- */
+
 export const getDeclarationTypes = createSelector(
   getDeclarationTypeState,
   state => state.declarationTypes
@@ -47,7 +42,7 @@ export const getError = createSelector(
   state => state.error
 );
 
-export const getDisplayDeclarationTypes = createSelector(
+export const getToggleDeclarationTypes = createSelector(
   getDeclarationTypeState,
   state => state.showDeclarationTypes
 );

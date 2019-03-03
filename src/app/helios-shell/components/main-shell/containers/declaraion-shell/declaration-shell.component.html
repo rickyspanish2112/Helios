@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-4">
+    <app-declaration-type
+    [errorMessage] = "errorMessage$ | async"
+    [displayTypes] = "displayTypes$ | async"
+    [declarationTypes] = "declarationTypes$ | async"
+    [badges] = "badges$ | async"
+    [selectedDeclarationType]= "selectedDeclarationType$ | async"
+    [selectedBadge] = "selectedBadge$ | async"
+    [traderReference]= "traderReference$ | async"
+    (checked) = "checkChanged($event)"
+    (declarationTypeSelected)= "onSelectedDeclarationTypeChange($event)"
+    (badgeSelected)= "onSelecedBadgeCodeChange($event)"
+    (traderReferenceSet) = "onBlurTraderReferenceChange($event)"
+    >
+
+    </app-declaration-type>
+  </div>
+</div>
