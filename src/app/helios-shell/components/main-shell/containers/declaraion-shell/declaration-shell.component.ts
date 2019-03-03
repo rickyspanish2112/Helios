@@ -36,6 +36,7 @@ export class DeclarationShellComponent implements OnInit {
     this.declarationTypes$ = this.store.pipe(select(fromDeclaraionType.getDeclarationTypes));
     this.selectedDeclarationType$ = this.store.pipe(select(fromDeclaraionType.getCurrentDeclarationType));
     this.selectedBadge$ = this.store.pipe(select(fromDeclaraionType.getCurrentBadge));
+    this.traderReference$ = this.store.pipe(select(fromDeclaraionType.getTraderReference));
    }
 
    checkChanged(value: boolean): void {
