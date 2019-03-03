@@ -5,9 +5,10 @@ import { Action } from '@ngrx/store';
 
 import * as declaraionTypeActions from '../state/declaraion-type-action';
 import { mergeMap, map, catchError } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 
-export class
- DeclarationTypeEffects {
+@Injectable()
+export class  DeclarationTypeEffects {
 
 constructor(private declarationListService: ListService,
             private actions$: Actions) {}

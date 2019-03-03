@@ -5,9 +5,9 @@ import * as fromRoot from '../../../../../../state/app-state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { DeclarationTypeActions, DeclarationTypesActionTypes } from './declaraion-type-action';
 
-/* export interface State extends fromRoot.State {
+export interface State extends fromRoot.State {
   declarationType: DeclarationTypeState;
-} */
+}
 
 // State for this feature (Declaraions types)
 export interface DeclarationTypeState {
@@ -31,13 +31,13 @@ const initialState: DeclarationTypeState = {
 };
 
 const getDeclarationTypeState = createFeatureSelector<DeclarationTypeState>('declarationType');
-
+/*
 export const getDisplayDeclarationType = createSelector(
   getDeclarationTypeState,
   state => state.showDeclarationTypes
 );
-
-/* export const getDeclarationTypes = createSelector(
+ */
+export const getDeclarationTypes = createSelector(
   getDeclarationTypeState,
   state => state.declarationTypes
 );
@@ -45,7 +45,7 @@ export const getDisplayDeclarationType = createSelector(
 export const getError = createSelector(
   getDeclarationTypeState,
   state => state.error
-); */
+);
 
 export function reducer(state = initialState,  action: DeclarationTypeActions): DeclarationTypeState {
 
