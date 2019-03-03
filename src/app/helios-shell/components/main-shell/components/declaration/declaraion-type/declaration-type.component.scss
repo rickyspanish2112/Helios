@@ -1,0 +1,229 @@
+.wrapper{
+  margin: 0 0 0 0;
+  }
+
+  .flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+    flex-wrap: wrap;
+  }
+
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+  }
+
+  .controls-wrapper {
+  border: DodgerBlue 2px solid;
+  border-radius: 8px;
+  }
+
+  .declaration-parties-wrapper{
+    border: DodgerBlue 2px solid;
+  border-radius: 8px;
+  }
+
+  .flex-item-declarationType {
+    overflow-y: auto;
+    margin-right: 5px;
+    flex-grow: 1;
+  }
+
+  .flex-item-badgeCode {
+    overflow-y: auto;
+    margin-right: 5px;
+    flex-grow: 5;
+  }
+
+  .flex-item-declarationPary-left {
+    overflow-y: auto;
+    margin-right: 5px;
+    //flex-grow: 0;
+    width: 475px;
+    flex: 0 0 475;
+  }
+
+  @media all and (max-width: 800px) {
+    .flex-item-declarationPary-left {
+      overflow-y: auto;
+      margin-right: 5px;
+      //flex-grow: 0;
+      width: 350px;
+      flex: 0 0 350px;
+    }
+  }
+
+  .flex-item-declarationPary-right {
+    overflow-y: auto;
+    margin-right: 5px;
+    //flex-grow: 2;
+    width: 475px;
+    flex: 0 0 475px;
+  }
+
+  @media all and (max-width: 800px) {
+    .flex-item-declarationPary-right {
+      overflow-y: auto;
+      margin-right: 5px;
+      //flex-grow: 0;
+      width: 350px;
+      flex: 0 0 350px;
+    }
+  }
+
+  .flex-item-traderReference {
+    flex-grow: 1;
+  }
+
+  .flex-item-party-controls-left{
+   // flex-grow: 1;
+  }
+
+  .flex-item-party-controls-right{
+  //  flex-grow: 3;
+  }
+
+  .labelAlignment {
+    margin-left: 3px;
+    padding-top: 8px;
+    font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+  }
+
+  @media all and (max-width: 800px) {
+    .labelAlignment {
+      margin-left: 0px;
+      padding-top: 8px;
+      font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+    }
+  }
+
+  .declaration-type-combobox {
+    width: 350px;
+    max-width: 350px;
+    font-size: 12px;
+    border: #673ab7 2px solid;
+    border-radius: 5px;
+    height: 15px;
+    padding: 9px;
+  }
+
+  @media all and (max-width: 800px) {
+    .declaration-type-combobox {
+      width: 190px;
+      max-width: 190px;
+      font-size: 12px;
+      border: #673ab7 2px solid;
+      border-radius: 5px;
+      height: 15px;
+      padding: 9px;
+    }
+  }
+
+  .badge-codes-combobox {
+    width: 200px;
+    max-width: 200px;
+    font-size: 12px;
+    border: #673ab7 2px solid;
+    border-radius: 5px;
+    height: 15px;
+    padding: 9px;
+  }
+
+  @media all and (max-width: 800px) {
+    .badge-codes-combobox {
+      width: 200px;
+      max-width: 200px;
+      font-size: 12px;
+      border: #673ab7 2px solid;
+      border-radius: 5px;
+      height: 15px;
+      padding: 9px;
+    }
+  }
+
+  .trader-reference-inputBox {
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: left;
+    font-size: 12px;
+    border: #673ab7 2px solid;
+    border-radius: 5px;
+    height: 15px;
+    padding: 9px;
+    width: 350px;
+  }
+
+  @media all and (max-width: 800px) {
+    .trader-reference-inputBox {
+      width: 140px;
+      max-width: 140px;
+      font-size: 12px;
+      border: #673ab7 2px solid;
+      border-radius: 5px;
+      height: 15px;
+      padding: 9px;
+    }
+  }
+
+  .party-inputBox {
+    border: none;
+    background: none;
+    padding: 0;
+    text-align: left;
+    font-size: 12px;
+    border: #673ab7 2px solid;
+    border-radius: 5px;
+    height: 15px;
+    padding: 9px;
+    width: 100px;
+  }
+
+  .party-inputBox-width{
+  width: 220px;
+  }
+
+  @media all and (max-width: 800px) {
+    .party-inputBox-width{
+      width: 165px;
+      }
+  }
+
+  ::ng-deep .mat-option-text.mat-option-text {
+    word-wrap: break-word;
+    white-space: pre-line;
+    padding: 5px;
+    margin: 2px;
+    line-height: 15px;
+  }
+
+  ::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+
+  .declaration-parties {
+    margin: 10px;
+  }
+
+  .party-headers-align .mat-expansion-panel-header-title,
+  .party-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+
+  .party-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+  }
+
+  .party-inputBox-margin {
+    margin-left: 5px;
+  }
+
+  @media all and (max-width: 800px) {
+    .party-inputBox-margin {
+      margin-top: 3px;
+    }
+  }

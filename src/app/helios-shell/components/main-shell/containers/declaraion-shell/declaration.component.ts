@@ -26,6 +26,7 @@ export class DeclarationComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new fromAction.Load());
+    console.log('About to get type from reducer');
     this.declarationType$ = this.store.pipe(select(fromReducer.getDeclarationTypes)) as Observable<Declarationtype[]>;
   }
 

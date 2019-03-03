@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { Declarationtype } from 'src/app/helios-shell/model/declarationtype';
+import { Badge } from 'src/app/helios-shell/model/badge';
 
 
 export enum DeclarationTypesActionTypes {
@@ -24,6 +25,12 @@ export class SetCurrentDeclarationType implements Action {
   constructor(public payload: Declarationtype) {}
 }
 
+export class SetCurrentBadge implements Action {
+  readonly type = DeclarationTypesActionTypes.SetCurrentBadge;
+
+  constructor(public payload: Badge) {}
+}
+
 export class Load implements Action {
   readonly type = DeclarationTypesActionTypes.Load;
 }
@@ -40,10 +47,17 @@ export class LoadFail implements Action {
   constructor(public payload: string) { }
 }
 
+export class SetTraderReference implements Action {
+  readonly type = DeclarationTypesActionTypes.SetTraderReference;
+
+  constructor(public payload: string) {}
+}
 
 export type DeclarationTypeActions =
   | ToggleDeclarationTypes
   | SetCurrentDeclarationType
+  | SetCurrentBadge
+  | SetTraderReference
   | Load
   | LoadSuccess
   | LoadFail;

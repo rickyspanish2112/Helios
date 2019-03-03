@@ -5,6 +5,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { Accountnodes } from '../helios-shell/model/accountnodes';
 import { Observable, throwError } from 'rxjs';
 import { Declarationtype } from './model/declarationtype';
+import { Badge } from './model/badge';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,16 @@ export class ListService {
     );
   }
 
+
+ getBadges(): Observable<Badge[]> {
+    const declarationTypesUrl = '../../assets/api/badges.json';
+
+    return this.http.get<Badge[]>(declarationTypesUrl)
+    .pipe(
+      tap(data => console.log(JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
 
  private doGetAccountNodes(): any {
     return data =>

@@ -2,6 +2,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Declarationtype } from 'src/app/helios-shell/model/declarationtype';
 import { Badge } from 'src/app/helios-shell/model/badge';
+import { ListService } from 'src/app/helios-shell/listservice.service';
+
+import * as fromDeclarationTypeActions from '../../../components/declaration/declaraion-type/state/declaraion-type-action';
+import * as fromDeclaraionType from '../../declaration/declaraion-type/state/declaration-type.reducer';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'app-declaration-type',
@@ -9,46 +14,143 @@ import { Badge } from 'src/app/helios-shell/model/badge';
   styleUrls: ['./declaration-type.component.scss']
 })
 export class DeclarationTypeComponent implements OnInit {
-  displayType: boolean;
   customCollapsedHeight = '40px';
   customExpandedHeight = '40px';
 
   selectedDeclarationType: Declarationtype;
   pageTitle = 'Declaraiont Type';
+  declarationTypes: Declarationtype[];
+  errorMessage: any;
+  badges: Badge[];
+  displayTypes: boolean;
+  selectedBadge: Badge;
+  traderReference: string;
 
-  @Input() errorMessage: string;
+  constructor(
+    private listService: ListService,
+    private store: Store<fromDeclaraionType.State>
+  ) {}
 
-  @Input() dislayDeclarionType: boolean;
-  @Input() declarationTypes: Declarationtype[];
-  @Input() selectedDeclaraionType: Declarationtype;
+  ngOnInit(): void {
+    this.listService.getDeclarationTypes().subscribe(
+      data => {
+        this.declarationTypes = data;
+      },
+      error => (this.errorMessage = error as any)
+    );
 
-  @Input() badges: Badge[];
-  @Input() selectedBadge: Badge;
+    this.listService.getBadges().subscribe(
+      data => {
+        this.badges = data;
+      },
+      error => (this.errorMessage = error as any)
+    );
 
-  @Input() traderReference: string;
+    this.store
+      .pipe(select(fromDeclaraionType.getDisplayDeclarationTypes))
+      .subscribe(
+        displayDeclarationTypes => (this.displayTypes = displayDeclarationTypes)
+      );
 
-  @Output() checked = new EventEmitter<boolean>();
-  @Output() selectedType = new EventEmitter<Declarationtype>();
-  @Output() badgeSelected = new EventEmitter<Badge>();
-  @Output() reference = new EventEmitter<string>();
+    this.store
+      .pipe(select(fromDeclaraionType.getCurrentDeclarationType))
+      .subscribe(selectedType =>
+        this.doSetSelectedDeclarationTypeChanged(selectedType)
+      );
 
-  constructor() {}
+    this.store
+      .pipe(select(fromDeclaraionType.getCurrentBadge))
+      .subscribe(selectedType =>
+        this.doSetSelectedBadgeChanged(selectedType)
+      );
 
-  ngOnInit() {}
+    this.store
+      .pipe(select(fromDeclaraionType.getTraderReference))
+      .subscribe(
+        traderReference => (this.traderReference = traderReference)
+      );
+
+/*     this.listService.getBadges().subscribe(
+        data => {
+          this.badges = data;
+        },
+        error => (this.errorMessage = error as any)
+      ); */
+  }
+
+  doSetSelectedBadgeChanged(selectedBadge: Badge) {
+    if (selectedBadge === null) {
+      return null;
+    }
+    console.log(
+      'About to set selected badge on view. Selected badge code: ' +
+        [selectedBadge.code]
+    );
+    this.selectedBadge = selectedBadge;
+  }
+  doSetSelectedDeclarationTypeChanged(selectedType: Declarationtype): void {
+    if (selectedType === null) {
+      return null;
+    }
+    console.log(
+      'About to set selected declaration type view. Selected  type: ' +
+        [selectedType.value]
+    );
+    this.selectedDeclarationType = selectedType;
+  }
 
   checkChanged(value: boolean): void {
-    this.checked.emit(value);
+    console.log('About to dispatch toggle Display Declaration Types');
+    this.store.dispatch(
+      new fromDeclarationTypeActions.ToggleDeclarationTypes(value)
+    );
   }
 
-  onDeclarationTypeSelected(event) {
-    this.selectedType.emit(event.source.value);
+  onSelectedDeclarationTypeChange(event) {
+    if (!event.isUserInput) {
+      return null;
+    }
+    this.selectedDeclarationType = this.declarationTypes.find(
+      b => b.value === event.source.value
+    );
+
+    console.log(
+      'About to dispatch Set Trader Reference: ' +
+        this.selectedDeclarationType.value
+    );
+    this.store.dispatch(
+      new fromDeclarationTypeActions.SetCurrentDeclarationType(
+        this.selectedDeclarationType
+      )
+    );
   }
 
-    onBadgeSelected(event) {
-      this.badgeSelected.emit(event.source.value);
+  onSelecedBadgeCodeChange(event) {
+    if (!event.isUserInput) {
+      return null;
+    }
+
+    this.selectedBadge = this.badges.find(b => b.code === event.source.value);
+
+    if (this.selectedBadge == null) {
+      console.log('No badge found matching code ' + event.source.value);
+      return;
+    }
+
+    console.log('Found badge matching code: ' + this.selectedBadge.code);
+
+    console.log('About to dispatch data to SetCurrentBadge action:');
+    this.store.dispatch(
+      new fromDeclarationTypeActions.SetCurrentBadge(this.selectedBadge)
+    );
   }
 
   onBlurTraderReferenceChange(traderReference: string) {
-    this.reference.emit(traderReference);
+    console.log('About to dispatch Set Trader Reference: ' + traderReference);
+
+    this.store.dispatch(
+      new fromDeclarationTypeActions.SetTraderReference(traderReference)
+    );
   }
+
 }
