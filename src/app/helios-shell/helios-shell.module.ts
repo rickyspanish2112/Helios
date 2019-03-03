@@ -13,7 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListService } from './listservice.service';
 import { MAT_DATE_LOCALE } from '@angular/material';
 
-import { DeclarationComponent } from '../helios-shell/components/main-shell/components/declaration/declaration.component';
+import { DeclarationComponent } from './components/main-shell/containers/declaraion-shell/declaration.component';
+import { DeclarationTypeComponent } from './components/main-shell/components/declaration/declaraion-type/declaration-type.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { reducer } from '../helios-shell/components/main-shell/components/declaration/declaraion-type/state/declaration-type.reducer';
+import { DeclarationTypeEffects } from './components/main-shell/components/declaration/declaraion-type/state/declaraion-type.effects';
 
 const routes: Routes = [
   { path: '', component: HeliosShellComponent,
@@ -30,7 +36,8 @@ const routes: Routes = [
     MainShellComponent,
     SidenavComponent,
     ToolbarComponent,
-    DeclarationComponent
+    DeclarationComponent,
+    DeclarationTypeComponent
   ],
 
     imports: [
@@ -39,7 +46,12 @@ const routes: Routes = [
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
-   RouterModule.forChild(routes)
+   RouterModule.forChild(routes),
+   StoreModule.forFeature('declarationType', reducer),
+   EffectsModule.forFeature(
+    [ DeclarationTypeEffects ]
+  ),
+
   ],
   providers: [
     ListService,

@@ -4,6 +4,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 
 import { Accountnodes } from '../helios-shell/model/accountnodes';
 import { Observable, throwError } from 'rxjs';
+import { Declarationtype } from './model/declarationtype';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,18 @@ export class ListService {
     );
   }
 
-  doGetAccountNodes(): any {
+  getDeclarationTypes(): Observable<Declarationtype[]> {
+    const declarationTypesUrl = '../../assets/api/declarationtypes.json';
+
+    return this.http.get<Declarationtype[]>(declarationTypesUrl)
+    .pipe(
+      tap(data => console.log(JSON.stringify(data))),
+      catchError(this.handleError)
+    );
+  }
+
+
+ private doGetAccountNodes(): any {
     return data =>
     console.log(
       'The following account nodes were returned: ' + JSON.stringify(data)
