@@ -8,9 +8,12 @@ export enum DeclarationTypesActionTypes {
   SetCurrentBadge = '[Declaration Types] Set Current Badge',
   SetTraderReference = '[Declaration Types] Set Trader Reference',
   SetCurrentDeclarationType = '[Declaration Types] Set Declaration Type',
-  LoadDeclarationType = '[DeclarationType] Load',
-  LoadDeclarationTypeSuccess = '[DeclarationType] Load Success',
-  LoadDeclarationTypeFail = '[DeclarationType] Load Fail',
+  LoadDeclarationType = '[DeclarationType] Load Declaration Type',
+  LoadDeclarationTypeSuccess = '[DeclarationType] Load Declaration Type Success',
+  LoadDeclarationTypeFail = '[DeclarationType] Load Declaration Type Fail',
+  LoadBadges = '[DeclarationType] Load Badges',
+  LoadBadgesSuccess = '[DeclarationType] Load Badges Success',
+  LoadBadgesFailure = '[DeclarationType] Load Badges Failure'
 }
 
 export class ToggleDeclarationTypes implements Action {

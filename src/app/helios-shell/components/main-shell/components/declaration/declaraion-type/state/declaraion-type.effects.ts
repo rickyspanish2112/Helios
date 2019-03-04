@@ -21,4 +21,9 @@ constructor(private declarationListService: ListService,
                 catchError(err => of(new declaraionTypeActions.LoadDeclarationFail(err)))
               ))
             );
+
+            @Effect()
+            loadBadges$: Observable<Action> = this.actions$.pipe(
+              ofType()
+            )
  }
