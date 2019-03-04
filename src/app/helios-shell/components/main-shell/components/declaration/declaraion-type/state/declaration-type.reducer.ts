@@ -62,7 +62,7 @@ export const getTraderReference = createSelector(
   state => state.currentTraderTreference
 );
 
-export function reducer(state = initialState,  action: DeclarationTypeActions): DeclarationTypeState {
+export function reducer(state =initialState,  action: DeclarationTypeActions): DeclarationTypeState {
 
   switch (action.type) {
     case DeclarationTypesActionTypes.ToggleDeclaraionTypes:
@@ -71,6 +71,12 @@ export function reducer(state = initialState,  action: DeclarationTypeActions): 
       showDeclarationTypes: action.payload
     };
 
+    case DeclarationTypesActionTypes.LoadDeclarationTypeSuccess:
+    return {
+      ...state,
+      declarationTypes: [...action.payload]
+    };
+    
     case DeclarationTypesActionTypes.SetCurrentDeclarationType:
       return {
         ...state,

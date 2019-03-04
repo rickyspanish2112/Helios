@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Declarationtype } from 'src/app/helios-shell/model/declarationtype';
 import { Badge } from 'src/app/helios-shell/model/badge';
-import { ListService } from 'src/app/helios-shell/listservice.service';
 
 import * as fromDeclarationTypeActions from '../../../main-shell/components/declaration/declaraion-type/state/declaraion-type-action';
 import * as fromDeclaraionType from '../../components/declaration/declaraion-type/state/declaration-type.reducer';
@@ -24,12 +23,11 @@ export class DeclarationShellComponent implements OnInit {
   selectedBadge$: Observable<Badge>;
   traderReference$: Observable<string>;
 
-  constructor(private listService: ListService,
-              private store: Store<fromDeclaraionType.State>) { }
+  constructor(private store: Store<fromDeclaraionType.State>) { }
 
   ngOnInit() {
 
-    this.store.dispatch(new fromDeclarationTypeActions.Load());
+    this.store.dispatch(new fromDeclarationTypeActions.LoadDeclarationType());
 
     this.errorMessage$ = this.store.pipe(select(fromDeclaraionType.getError));
     this.displayTypes$ = this.store.pipe(select(fromDeclaraionType.getToggleDeclarationTypes));

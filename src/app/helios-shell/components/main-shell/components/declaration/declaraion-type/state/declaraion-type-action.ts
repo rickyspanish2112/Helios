@@ -8,9 +8,9 @@ export enum DeclarationTypesActionTypes {
   SetCurrentBadge = '[Declaration Types] Set Current Badge',
   SetTraderReference = '[Declaration Types] Set Trader Reference',
   SetCurrentDeclarationType = '[Declaration Types] Set Declaration Type',
-  Load = '[DeclarationType] Load',
-  LoadSuccess = '[DeclarationType] Load Success',
-  LoadFail = '[DeclarationType] Load Fail',
+  LoadDeclarationType = '[DeclarationType] Load',
+  LoadDeclarationTypeSuccess = '[DeclarationType] Load Success',
+  LoadDeclarationTypeFail = '[DeclarationType] Load Fail',
 }
 
 export class ToggleDeclarationTypes implements Action {
@@ -31,18 +31,18 @@ export class SetCurrentBadge implements Action {
   constructor(public payload: Badge) {}
 }
 
-export class Load implements Action {
-  readonly type = DeclarationTypesActionTypes.Load;
+export class LoadDeclarationType implements Action {
+  readonly type = DeclarationTypesActionTypes.LoadDeclarationType;
 }
 
-export class LoadSuccess implements Action {
-  readonly type = DeclarationTypesActionTypes.LoadSuccess;
+export class LoadDeclarationSuccess implements Action {
+  readonly type = DeclarationTypesActionTypes.LoadDeclarationTypeSuccess;
 
   constructor(public payload: Declarationtype[]) { }
 }
 
-export class LoadFail implements Action {
-  readonly type = DeclarationTypesActionTypes.LoadFail;
+export class LoadDeclarationFail implements Action {
+  readonly type = DeclarationTypesActionTypes.LoadDeclarationTypeFail;
 
   constructor(public payload: string) { }
 }
@@ -58,6 +58,6 @@ export type DeclarationTypeActions =
   | SetCurrentDeclarationType
   | SetCurrentBadge
   | SetTraderReference
-  | Load
-  | LoadSuccess
-  | LoadFail;
+  | LoadDeclarationType
+  | LoadDeclarationSuccess
+  | LoadDeclarationFail;

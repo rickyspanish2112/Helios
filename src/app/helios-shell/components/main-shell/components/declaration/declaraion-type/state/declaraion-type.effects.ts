@@ -15,10 +15,10 @@ constructor(private declarationListService: ListService,
 
             @Effect()
             loadDeclaraionTypes$: Observable<Action> = this.actions$.pipe(
-              ofType(declaraionTypeActions.DeclarationTypesActionTypes.Load),
+              ofType(declaraionTypeActions.DeclarationTypesActionTypes.LoadDeclarationType),
               mergeMap(action => this.declarationListService.getDeclarationTypes().pipe(
-                map(types => (new declaraionTypeActions.LoadSuccess(types))),
-                catchError(err => of(new declaraionTypeActions.LoadFail(err)))
+                map(types => (new declaraionTypeActions.LoadDeclarationSuccess(types))),
+                catchError(err => of(new declaraionTypeActions.LoadDeclarationFail(err)))
               ))
             );
  }
