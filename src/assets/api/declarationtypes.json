@@ -4,47 +4,47 @@
     "value": "IMA - Standard customs declaration (Import not EFTA) - Goods arrived"
   },
   {
-    "Id": 1,
+    "Id": 2,
     "value": "IMB - Simplified declaration on an occasional basis (Import not EFTA) - Goods arrived"
   },
   {
-    "Id": 1,
+    "Id": 3,
     "value": "IMD - Standard customs declaration (Import not EFTA) - Goods not arrived"
   },
   {
-    "Id": 1,
+    "Id": 4,
     "value": "COB - Simplified declaration on an occasional basis (Trade new Member States) - Goods arrived"
   },
   {
-    "Id": 1,
+    "Id": 5,
     "value": "COE - Simplified declaration on an occasional basis (Trade new Member States) - Goods not arrived"
   },
   {
-    "Id": 1,
+    "Id": 6,
     "value": "COX - Supplementary declaration covered by types B and E (Trade new Member States) - Goods arrived"
   },
 
   {
-    "Id": 1,
+    "Id": 7,
     "value": "IMB - Simplified declaration on an occasional basis (Import not EFTA) - Goods arrived"
   },
 
   {
-    "Id": 1,
+    "Id": 8,
     "value": "IME - Simplified declaration on an occasional basis (Import not EFTA) - Goods not arrived"
   },
 
   {
-    "Id": 1,
+    "Id": 9,
     "value": "IMF - Simplified declaration with regular use (pre-authorised) (Import not EFTA) - Goods not arrived"
   },
 
   {
-    "Id": 1,
+    "Id": 10,
     "value": "C21 (Import not EFTA) - Goods not arrived"
   },
   {
-    "Id": 1,
+    "Id": 11,
     "value": "Supplementary declaration covered by types C and F (Import not EFTA) - Goods arrived"
   }
   ]

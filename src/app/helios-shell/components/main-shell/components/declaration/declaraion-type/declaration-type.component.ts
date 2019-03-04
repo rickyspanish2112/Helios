@@ -15,30 +15,25 @@ export class DeclarationTypeComponent implements OnInit {
   @Input() displayTypes: boolean;
   @Input() declarationTypes: Declarationtype[];
   @Input() badges: Badge[];
-  @Input() selectedDeclarationType: Declarationtype;
+  @Input() selectedDeclarationType: string;
   @Input() selectedBadge: Badge;
   @Input() traderReference: string;
 
   @Output() checked = new EventEmitter<boolean>();
-  @Output() declarationTypeSelected = new EventEmitter<Declarationtype>();
+  @Output() declarationTypeSelected = new EventEmitter<string>();
   @Output() badgeSelected = new EventEmitter<Badge>();
   @Output() traderReferenceSet = new EventEmitter<string>();
 
-  constructor( ) {}
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   checkChanged(value: boolean): void {
     this.checked.emit(value);
   }
 
-  onSelectedTypeChanged(event): void {
-    this.declarationTypeSelected.emit(event.source.value);
-  }
-
-  onSelectedBadgeChanged(event): void {
-    this.badgeSelected.emit(event.source.value);
+  badgeCodeSelected(value: Badge) {
+    this.badgeSelected.emit(value);
   }
 
   onTraderReferenceSet(value: string) {

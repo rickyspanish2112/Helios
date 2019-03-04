@@ -5,15 +5,13 @@
     [displayTypes] = "displayTypes$ | async"
     [declarationTypes] = "declarationTypes$ | async"
     [badges] = "badges$ | async"
-    [selectedDeclarationType]= "selectedDeclarationType$ | async"
-    [selectedBadge] = "selectedBadge$ | async"
     [traderReference]= "traderReference$ | async"
+    [selectedBadge] = "selectedBadge$ | async"
+    (badgeSelected) = "badgeCodeSelected($event)"
+
     (checked) = "checkChanged($event)"
-    (declarationTypeSelected)= "onSelectedDeclarationTypeChange($event)"
-    (badgeSelected)= "onSelecedBadgeCodeChange($event)"
     (traderReferenceSet) = "onBlurTraderReferenceChange($event)"
     >
-
     </app-declaration-type>
   </div>
 </div>

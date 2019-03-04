@@ -3,7 +3,10 @@ import { Declarationtype } from 'src/app/helios-shell/model/declarationtype';
 
 import * as fromRoot from '../../../../../../state/app-state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { DeclarationTypeActions, DeclarationTypesActionTypes } from './declaraion-type-action';
+import {
+  DeclarationTypeActions,
+  DeclarationTypesActionTypes
+} from './declaraion-type-action';
 
 export interface State extends fromRoot.State {
   declarationType: DeclarationTypeState;
@@ -14,7 +17,7 @@ export interface DeclarationTypeState {
   showDeclarationTypes: boolean;
   currentBadge: Badge;
   badges: Badge[];
-  currentDeclarationType: Declarationtype;
+  currentDeclarationType: string;
   declarationTypes: Declarationtype[];
   currentTraderTreference: string;
   error: string;
@@ -30,7 +33,9 @@ const initialState: DeclarationTypeState = {
   error: ''
 };
 
-const getDeclarationTypeState = createFeatureSelector<DeclarationTypeState>('declarationType');
+const getDeclarationTypeState = createFeatureSelector<DeclarationTypeState>(
+  'declarationType'
+);
 
 export const getDeclarationTypes = createSelector(
   getDeclarationTypeState,
@@ -47,6 +52,12 @@ export const getToggleDeclarationTypes = createSelector(
   state => state.showDeclarationTypes
 );
 
+export const getBadges = createSelector(
+  getDeclarationTypeState,
+  state => state.badges
+);
+
+
 export const getCurrentDeclarationType = createSelector(
   getDeclarationTypeState,
   state => state.currentDeclarationType
@@ -62,41 +73,48 @@ export const getTraderReference = createSelector(
   state => state.currentTraderTreference
 );
 
-export function reducer(state =initialState,  action: DeclarationTypeActions): DeclarationTypeState {
-
+export function reducer(
+  state = initialState,
+  action: DeclarationTypeActions
+): DeclarationTypeState {
   switch (action.type) {
     case DeclarationTypesActionTypes.ToggleDeclaraionTypes:
-    return {
-      ...state,
-      showDeclarationTypes: action.payload
-    };
+      return {
+        ...state,
+        showDeclarationTypes: action.payload
+      };
 
     case DeclarationTypesActionTypes.LoadDeclarationTypeSuccess:
-    return {
-      ...state,
-      declarationTypes: [...action.payload]
-    };
-    
+      return {
+        ...state,
+        declarationTypes: [...action.payload]
+      };
+
+    case DeclarationTypesActionTypes.LoadBadgesSuccess:
+      return {
+        ...state,
+        badges: [...action.payload]
+      };
+
     case DeclarationTypesActionTypes.SetCurrentDeclarationType:
       return {
         ...state,
-        currentDeclarationType: {...action.payload}
+        currentDeclarationType: action.payload
       };
 
-      case DeclarationTypesActionTypes.SetCurrentBadge:
+    case DeclarationTypesActionTypes.SetCurrentBadge:
       return {
         ...state,
-        currentBadge: {...action.payload}
+        currentBadge: action.payload
       };
 
-      case DeclarationTypesActionTypes.SetTraderReference:
+    case DeclarationTypesActionTypes.SetTraderReference:
       return {
         ...state,
         currentTraderTreference: action.payload
       };
 
     default:
-    return state;
+      return state;
   }
-
 }

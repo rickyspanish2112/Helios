@@ -17,13 +17,17 @@ constructor(private declarationListService: ListService,
             loadDeclaraionTypes$: Observable<Action> = this.actions$.pipe(
               ofType(declaraionTypeActions.DeclarationTypesActionTypes.LoadDeclarationType),
               mergeMap(action => this.declarationListService.getDeclarationTypes().pipe(
-                map(types => (new declaraionTypeActions.LoadDeclarationSuccess(types))),
-                catchError(err => of(new declaraionTypeActions.LoadDeclarationFail(err)))
+                map(types => (new declaraionTypeActions.LoadDeclarationTypeSuccess(types))),
+                catchError(err => of(new declaraionTypeActions.LoadDeclarationTypeFail(err)))
               ))
             );
 
             @Effect()
             loadBadges$: Observable<Action> = this.actions$.pipe(
-              ofType()
-            )
+              ofType(declaraionTypeActions.DeclarationTypesActionTypes.LoadBadges),
+              mergeMap(action => this.declarationListService.getBadges().pipe(
+                map(types => (new declaraionTypeActions.LoadBadgesSuccess(types))),
+                catchError(err => of(new declaraionTypeActions.LoadDeclarationTypeFail(err)))
+              ))
+            );
  }

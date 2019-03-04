@@ -13,7 +13,7 @@ export enum DeclarationTypesActionTypes {
   LoadDeclarationTypeFail = '[DeclarationType] Load Declaration Type Fail',
   LoadBadges = '[DeclarationType] Load Badges',
   LoadBadgesSuccess = '[DeclarationType] Load Badges Success',
-  LoadBadgesFailure = '[DeclarationType] Load Badges Failure'
+  LoadBadgesFail = '[DeclarationType] Load Badges Failure'
 }
 
 export class ToggleDeclarationTypes implements Action {
@@ -25,7 +25,7 @@ export class ToggleDeclarationTypes implements Action {
 export class SetCurrentDeclarationType implements Action {
   readonly type = DeclarationTypesActionTypes.SetCurrentDeclarationType;
 
-  constructor(public payload: Declarationtype) {}
+  constructor(public payload: string) {}
 }
 
 export class SetCurrentBadge implements Action {
@@ -38,14 +38,31 @@ export class LoadDeclarationType implements Action {
   readonly type = DeclarationTypesActionTypes.LoadDeclarationType;
 }
 
-export class LoadDeclarationSuccess implements Action {
+export class LoadDeclarationTypeSuccess implements Action {
   readonly type = DeclarationTypesActionTypes.LoadDeclarationTypeSuccess;
 
   constructor(public payload: Declarationtype[]) { }
 }
 
-export class LoadDeclarationFail implements Action {
+export class LoadDeclarationTypeFail implements Action {
   readonly type = DeclarationTypesActionTypes.LoadDeclarationTypeFail;
+
+  constructor(public payload: string) { }
+}
+
+export class LoadBadges implements Action {
+  readonly type = DeclarationTypesActionTypes.LoadBadges;
+}
+
+export class LoadBadgesSuccess implements Action {
+  readonly type = DeclarationTypesActionTypes.LoadBadgesSuccess;
+
+  constructor(public payload: Badge[]) { }
+
+}
+
+export class LoadBadgesFail implements Action {
+  readonly type = DeclarationTypesActionTypes.LoadBadgesFail;
 
   constructor(public payload: string) { }
 }
@@ -62,5 +79,8 @@ export type DeclarationTypeActions =
   | SetCurrentBadge
   | SetTraderReference
   | LoadDeclarationType
-  | LoadDeclarationSuccess
-  | LoadDeclarationFail;
+  | LoadDeclarationTypeSuccess
+  | LoadDeclarationTypeFail
+  | LoadBadges
+  | LoadBadgesSuccess
+  | LoadBadgesFail;

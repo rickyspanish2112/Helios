@@ -33,11 +33,10 @@ export class ListService {
     );
   }
 
-
  getBadges(): Observable<Badge[]> {
-    const declarationTypesUrl = '../../assets/api/badges.json';
+    const badgeUrl = '../../assets/api/badges.json';
 
-    return this.http.get<Badge[]>(declarationTypesUrl)
+    return this.http.get<Badge[]>(badgeUrl)
     .pipe(
       tap(data => console.log(JSON.stringify(data))),
       catchError(this.handleError)
