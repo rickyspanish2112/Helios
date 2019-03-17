@@ -7,6 +7,7 @@ import * as fromDeclarationTypeActions from '../../../main-shell/components/decl
 import * as fromDeclaraionType from '../../components/declaration/declaraion-type/state/declaration-type.reducer';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-declaration',
@@ -43,7 +44,8 @@ export class DeclarationShellComponent implements OnInit {
     this.badges$ = this.store.pipe(select(fromDeclaraionType.getBadges));
 
     this.selectedBadge$ = this.store.pipe(
-      select(fromDeclaraionType.getCurrentBadge)
+      select(fromDeclaraionType.getCurrentBadge),
+      tap(x => console.log('About to fetch current badge from store {0}', x))
     );
 
     this.traderReference$ = this.store.pipe(
