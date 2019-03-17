@@ -7,9 +7,11 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   shortCodeCaption = 'Short Code:';
-  exporterShortCode = '';
+  shortCode = '';
+  accountName = '';
 
-  @Input()accountName: string;
+  @Input()exporterAccountName: string;
+  @Input()importerAccountName: string;
 
   @Output() accountNameOnPropertyChanged = new EventEmitter<string>();
 
@@ -21,6 +23,4 @@ export class InputComponent implements OnInit {
   onAccountNameOnPropertyChanged(value: string) {
     this.accountNameOnPropertyChanged.emit(value);
   }
-
-
 }

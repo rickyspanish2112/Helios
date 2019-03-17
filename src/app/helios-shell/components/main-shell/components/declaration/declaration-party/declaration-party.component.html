@@ -14,7 +14,7 @@
                   <mat-expansion-panel-header>
                     <mat-panel-title>{{exporterPartyTitle}}</mat-panel-title>
                     <mat-panel-description>
-                      Account Name: {{accountName}}
+                      Account Name: {{exporterAccountName}}
                     </mat-panel-description>
                     <mat-icon>account_circle</mat-icon>
                   </mat-expansion-panel-header>
@@ -22,8 +22,8 @@
                     <div class="flex-container">
                       <div class="flex-item-party-controls-left">
                         <app-input
-                        [accountName]='accountName'
-                        (accountNameOnPropertyChanged)="onBlurAccountNameChanged($event)">
+                        [exporterAccountName]='exporterAccountName'
+                        (accountNameOnPropertyChanged)="onExporterAccountChanged($event)">
                       </app-input>
                       </div>
                     </div>
@@ -31,24 +31,22 @@
                 </mat-expansion-panel>
               </mat-accordion>
             </div>
-          </div>
-          <div class="flex-container">
-              <div class="flex-item-declarationPary-right">
+            <div class="flex-item-declarationPary-right">
                 <mat-accordion class="party-headers-align">
                   <mat-expansion-panel>
                     <mat-expansion-panel-header>
-                      <mat-panel-title>{{exporterPartyTitle}}</mat-panel-title>
+                      <mat-panel-title>{{importerPartyTitle}}</mat-panel-title>
                       <mat-panel-description>
-                        Account Name: {{accountName}}
+                        Account Name: {{importerAccountName}}
                       </mat-panel-description>
                       <mat-icon>account_circle</mat-icon>
                     </mat-expansion-panel-header>
                     <div class="controls-wrapper">
                       <div class="flex-container">
-                        <div class="flex-item-party-controls-left">
+                        <div class="flex-item-party-controls-right">
                           <app-input
-                          [accountName]='accountName'
-                          (accountNameOnPropertyChanged)="onBlurAccountNameChanged($event)">
+                          [importerAccountName]='importerAccountName'
+                          (accountNameOnPropertyChanged)="onImporterAccountChanged($event)">
                         </app-input>
                         </div>
                       </div>
@@ -56,7 +54,7 @@
                   </mat-expansion-panel>
                 </mat-accordion>
               </div>
-            </div>
+          </div>
         </div>
       </mat-expansion-panel>
     </mat-accordion>

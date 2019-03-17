@@ -4,16 +4,16 @@
     <input
       matInput
       type="text"
-      [(ngModel)]="exporterShortCode"
+      [(ngModel)]="shortCode"
       class="party-inputBox party-inputBox-margin party-inputBox-width"
     />
     <button
       mat-button
-      *ngIf="exporterShortCode"
+      *ngIf="shortCode"
       matSuffix
       mat-icon-button
       aria-label="Clear"
-      (click)="exporterShortCode = ''"
+      (click)="shortCode = ''"
     >
       <mat-icon>close</mat-icon>
     </button>

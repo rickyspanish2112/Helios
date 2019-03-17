@@ -12,16 +12,23 @@ export class DeclarationPartyComponent implements OnInit {
   pageTitle = 'Declaration Parties';
   exporterPartyTitle = 'Exporter [02]';
   importerPartyTitle = 'Importer [08]';
-  accountName: string;
+  exporterAccountName: string;
+  importerAccountName: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onBlurAccountNameChanged(value: string) {
-    this.accountName = value;
+  onExporterAccountChanged(value: string) {
+    this.exporterAccountName = value;
     console.log('About to set account name');
   }
+
+  onImporterAccountChanged(value: string) {
+    this.importerAccountName = value;
+    console.log('About to set account name');
+  }
+
 
 }
