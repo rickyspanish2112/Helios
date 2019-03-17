@@ -45,7 +45,7 @@ export class DeclarationShellComponent implements OnInit {
 
     this.selectedBadge$ = this.store.pipe(
       select(fromDeclaraionType.getCurrentBadge),
-      tap(x => console.log('About to fetch current badge from store {0}', x))
+      tap(x => console.log('About to fetch current badge from store', x))
     );
 
     this.traderReference$ = this.store.pipe(
