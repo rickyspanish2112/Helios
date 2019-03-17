@@ -1,16 +1,6 @@
-import { Badge } from 'src/app/helios-shell/model/badge';
 import { Declarationtype } from 'src/app/helios-shell/model/declarationtype';
-
-import * as fromRoot from '../../../../../../state/app-state';
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  DeclarationTypeActions,
-  DeclarationTypesActionTypes
-} from './declaraion-type-action';
-
-export interface State extends fromRoot.State {
-  declarationType: DeclarationTypeState;
-}
+import { Badge } from 'src/app/helios-shell/model/badge';
+import { DeclarationTypeActions, DeclarationTypesActionTypes } from './declaraion-type-action';
 
 // State for this feature (Declaraions types)
 export interface DeclarationTypeState {
@@ -32,46 +22,6 @@ const initialState: DeclarationTypeState = {
   currentTraderTreference: '',
   error: ''
 };
-
-const getDeclarationTypeState = createFeatureSelector<DeclarationTypeState>(
-  'declarationType'
-);
-
-export const getDeclarationTypes = createSelector(
-  getDeclarationTypeState,
-  state => state.declarationTypes
-);
-
-export const getError = createSelector(
-  getDeclarationTypeState,
-  state => state.error
-);
-
-export const getToggleDeclarationTypes = createSelector(
-  getDeclarationTypeState,
-  state => state.showDeclarationTypes
-);
-
-export const getBadges = createSelector(
-  getDeclarationTypeState,
-  state => state.badges
-);
-
-
-export const getCurrentDeclarationType = createSelector(
-  getDeclarationTypeState,
-  state => state.currentDeclarationType
-);
-
-export const getCurrentBadge = createSelector(
-  getDeclarationTypeState,
-  state => state.currentBadge
-);
-
-export const getTraderReference = createSelector(
-  getDeclarationTypeState,
-  state => state.currentTraderTreference
-);
 
 export function reducer(
   state = initialState,

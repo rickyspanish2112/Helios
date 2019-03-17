@@ -4,7 +4,7 @@ import { Declarationtype } from 'src/app/helios-shell/model/declarationtype';
 import { Badge } from 'src/app/helios-shell/model/badge';
 
 import * as fromDeclarationTypeActions from '../../../main-shell/components/declaration/declaraion-type/state/declaraion-type-action';
-import * as fromDeclaraionType from '../../components/declaration/declaraion-type/state/declaration-type.reducer';
+import * as fromDeclaraionType from '../../components/declaration/declaraion-type/state/';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
