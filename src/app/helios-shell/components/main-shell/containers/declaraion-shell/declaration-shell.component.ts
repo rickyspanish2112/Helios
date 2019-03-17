@@ -19,7 +19,7 @@ export class DeclarationShellComponent implements OnInit {
   displayTypes$: Observable<boolean>;
   declarationTypes$: Observable<Declarationtype[]>;
   badges$: Observable<Badge[]>;
-  selectedDeclarationType$: Observable<string>;
+  selectedDeclarationType$: Observable<Declarationtype>;
   selectedBadge$: Observable<Badge>;
   traderReference$: Observable<string>;
 
@@ -38,7 +38,8 @@ export class DeclarationShellComponent implements OnInit {
     );
 
     this.selectedDeclarationType$ = this.store.pipe(
-      select(fromDeclaraionType.getCurrentDeclarationType)
+      select(fromDeclaraionType.getCurrentDeclarationType),
+      tap(x => console.log('About to fetch current declaration type from store', x))
     );
 
     this.badges$ = this.store.pipe(select(fromDeclaraionType.getBadges));
@@ -68,8 +69,12 @@ export class DeclarationShellComponent implements OnInit {
   }
 
   badgeCodeSelected(value: Badge) {
-    console.log('About to dispatch Set Current Badge');
-    console.log(value);
+    console.log('About to dispatch Set Current Badge', value);
     this.store.dispatch(new fromDeclarationTypeActions.SetCurrentBadge(value));
+  }
+
+  declarationTypeSelected(value: Declarationtype) {
+    console.log('About to dispatch Set Current Declaration Type', value);
+    this.store.dispatch(new fromDeclarationTypeActions.SetCurrentDeclarationType(value));
   }
 }

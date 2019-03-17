@@ -15,12 +15,12 @@ export class DeclarationTypeComponent implements OnInit {
   @Input() displayTypes: boolean;
   @Input() declarationTypes: Declarationtype[];
   @Input() badges: Badge[];
-  @Input() selectedDeclarationType: string;
+  @Input() selectedDeclarationType: Declarationtype;
   @Input() selectedBadge: Badge;
   @Input() traderReference: string;
 
   @Output() checked = new EventEmitter<boolean>();
-  @Output() declarationTypeSelected = new EventEmitter<string>();
+  @Output() declarationTypeSelected = new EventEmitter<Declarationtype>();
   @Output() badgeSelected = new EventEmitter<Badge>();
   @Output() traderReferenceSet = new EventEmitter<string>();
 
@@ -32,8 +32,13 @@ export class DeclarationTypeComponent implements OnInit {
     this.checked.emit(value);
   }
 
-  badgeCodeSelected(value: Badge) {
+  onSelectedBadgeCodeChanged(value: Badge) {
     this.badgeSelected.emit(value);
+  }
+
+  onSelectedDeclarationTypeChanged(value: Declarationtype) {
+    this.declarationTypeSelected.emit(value);
+
   }
 
   onTraderReferenceSet(value: string) {

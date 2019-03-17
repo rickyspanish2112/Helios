@@ -17,7 +17,7 @@ export interface DeclarationTypeState {
   showDeclarationTypes: boolean;
   currentBadge: Badge;
   badges: Badge[];
-  currentDeclarationType: string;
+  currentDeclarationType: Declarationtype;
   declarationTypes: Declarationtype[];
   currentTraderTreference: string;
   error: string;

@@ -25,7 +25,7 @@ export class ToggleDeclarationTypes implements Action {
 export class SetCurrentDeclarationType implements Action {
   readonly type = DeclarationTypesActionTypes.SetCurrentDeclarationType;
 
-  constructor(public payload: string) {}
+  constructor(public payload: Declarationtype) {}
 }
 
 export class SetCurrentBadge implements Action {
