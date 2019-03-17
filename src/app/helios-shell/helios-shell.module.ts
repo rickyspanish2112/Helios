@@ -21,7 +21,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { reducer } from '../helios-shell/components/main-shell/components/declaration/declaraion-type/state/declaration-type.reducer';
 import { DeclarationTypeEffects } from './components/main-shell/components/declaration/declaraion-type/state/declaraion-type.effects';
 import { DeclarationPartyComponent } from './components/main-shell/components/declaration/declaration-party/declaration-party.component';
-import { InputComponent } from './components/main-shell/components/declaration/declaration-controls/input/input.component';
+import { InputComponent } from './components/main-shell/components/declaration/declaration-controls/declaraion-party-input/input.component';
 
 const routes: Routes = [
   { path: '', component: HeliosShellComponent,
