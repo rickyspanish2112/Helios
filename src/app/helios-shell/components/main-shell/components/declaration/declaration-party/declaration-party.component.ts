@@ -22,11 +22,9 @@ export class DeclarationPartyComponent implements OnInit {
 
   onExporterAccountChanged(value: string) {
     this.exporterAccountName = value;
-    console.log('About to set account name');
   }
 
   onImporterAccountChanged(value: string) {
     this.importerAccountName = value;
-    console.log('About to set account name');
   }
 }
