@@ -1,6 +1,10 @@
-.wrapper{
-  margin: 0 0 0 0;
-  }
+.declaration-type {
+width: 95%;
+margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+}
 
   .flex-container {
     display: flex;
@@ -17,11 +21,6 @@
 
   .controls-wrapper {
   border: DodgerBlue 2px solid;
-  border-radius: 8px;
-  }
-
-  .declaration-parties-wrapper{
-    border: DodgerBlue 2px solid;
   border-radius: 8px;
   }
 
