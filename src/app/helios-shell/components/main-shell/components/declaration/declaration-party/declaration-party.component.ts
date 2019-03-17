@@ -29,6 +29,4 @@ export class DeclarationPartyComponent implements OnInit {
     this.importerAccountName = value;
     console.log('About to set account name');
   }
-
-
 }
