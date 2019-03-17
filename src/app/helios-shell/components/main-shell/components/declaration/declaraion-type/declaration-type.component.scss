@@ -37,54 +37,6 @@
     flex-grow: 5;
   }
 
-  .flex-item-declarationPary-left {
-    overflow-y: auto;
-    margin-right: 5px;
-    //flex-grow: 0;
-    width: 475px;
-    flex: 0 0 475;
-  }
-
-  @media all and (max-width: 800px) {
-    .flex-item-declarationPary-left {
-      overflow-y: auto;
-      margin-right: 5px;
-      //flex-grow: 0;
-      width: 350px;
-      flex: 0 0 350px;
-    }
-  }
-
-  .flex-item-declarationPary-right {
-    overflow-y: auto;
-    margin-right: 5px;
-    //flex-grow: 2;
-    width: 475px;
-    flex: 0 0 475px;
-  }
-
-  @media all and (max-width: 800px) {
-    .flex-item-declarationPary-right {
-      overflow-y: auto;
-      margin-right: 5px;
-      //flex-grow: 0;
-      width: 350px;
-      flex: 0 0 350px;
-    }
-  }
-
-  .flex-item-traderReference {
-    flex-grow: 1;
-  }
-
-  .flex-item-party-controls-left{
-   // flex-grow: 1;
-  }
-
-  .flex-item-party-controls-right{
-  //  flex-grow: 3;
-  }
-
   .labelAlignment {
     margin-left: 3px;
     padding-top: 8px;
@@ -167,63 +119,10 @@
       padding: 9px;
     }
   }
-
-  .party-inputBox {
-    border: none;
-    background: none;
-    padding: 0;
-    text-align: left;
-    font-size: 12px;
-    border: #673ab7 2px solid;
-    border-radius: 5px;
-    height: 15px;
-    padding: 9px;
-    width: 100px;
-  }
-
-  .party-inputBox-width{
-  width: 220px;
-  }
-
-  @media all and (max-width: 800px) {
-    .party-inputBox-width{
-      width: 165px;
-      }
-  }
-
   ::ng-deep .mat-option-text.mat-option-text {
     word-wrap: break-word;
     white-space: pre-line;
     padding: 5px;
     margin: 2px;
     line-height: 15px;
-  }
-
-  ::ng-deep .mat-form-field-underline {
-    display: none;
-  }
-
-  .declaration-parties {
-    margin: 10px;
-  }
-
-  .party-headers-align .mat-expansion-panel-header-title,
-  .party-headers-align .mat-expansion-panel-header-description {
-    flex-basis: 0;
-  }
-
-  .party-headers-align .mat-expansion-panel-header-description {
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
-  }
-
-  .party-inputBox-margin {
-    margin-left: 5px;
-  }
-
-  @media all and (max-width: 800px) {
-    .party-inputBox-margin {
-      margin-top: 3px;
-    }
   }

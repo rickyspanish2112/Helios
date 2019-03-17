@@ -1,0 +1,65 @@
+  <div class="declaration-parties">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header
+        [collapsedHeight]="customCollapsedHeight"
+        [expandedHeight]="customExpandedHeight">
+          <mat-panel-title> <h4>{{pageTitle}}</h4> </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="controls-wrapper">
+          <div class="flex-container">
+            <div class="flex-item-declarationPary-left">
+              <mat-accordion class="party-headers-align">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>{{exporterPartyTitle}}</mat-panel-title>
+                    <mat-panel-description>
+                      Account Name: {{accountName}}
+                    </mat-panel-description>
+                    <mat-icon>account_circle</mat-icon>
+                  </mat-expansion-panel-header>
+                  <div class="controls-wrapper">
+                    <div class="flex-container">
+                      <div class="flex-item-party-controls-left">
+                        <app-input
+                        [accountName]='accountName'
+                        (accountNameOnPropertyChanged)="onBlurAccountNameChanged($event)">
+                      </app-input>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </div>
+          <div class="flex-container">
+              <div class="flex-item-declarationPary-right">
+                <mat-accordion class="party-headers-align">
+                  <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>{{exporterPartyTitle}}</mat-panel-title>
+                      <mat-panel-description>
+                        Account Name: {{accountName}}
+                      </mat-panel-description>
+                      <mat-icon>account_circle</mat-icon>
+                    </mat-expansion-panel-header>
+                    <div class="controls-wrapper">
+                      <div class="flex-container">
+                        <div class="flex-item-party-controls-left">
+                          <app-input
+                          [accountName]='accountName'
+                          (accountNameOnPropertyChanged)="onBlurAccountNameChanged($event)">
+                        </app-input>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </div>
+            </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+

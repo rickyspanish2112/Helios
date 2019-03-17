@@ -10,6 +10,7 @@ import { Badge } from 'src/app/helios-shell/model/badge';
 export class DeclarationTypeComponent implements OnInit {
   customCollapsedHeight = '40px';
   customExpandedHeight = '40px';
+  pageTitle = 'Declaration Type';
 
   @Input() errorMessage: string;
   @Input() displayTypes: boolean;

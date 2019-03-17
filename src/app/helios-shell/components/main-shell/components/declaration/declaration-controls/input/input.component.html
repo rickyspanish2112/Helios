@@ -1,0 +1,47 @@
+  <div>
+  <label class="labelAlignment">
+    {{shortCodeCaption}}
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="exporterShortCode"
+      class="party-inputBox party-inputBox-margin party-inputBox-width"
+    />
+    <button
+      mat-button
+      *ngIf="exporterShortCode"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="exporterShortCode = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </label>
+</div>
+<div>
+    <div class="flex-item-party-controls-left">
+        <label class="labelAlignment">
+         Acct. Name:
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="accountName"
+            class="party-inputBox party-inputBox-margin party-inputBox-width"
+            (ngModelChange)="onAccountNameOnPropertyChanged(accountName)"
+          />
+          <button
+            mat-button
+            *ngIf="accountName"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="accountName = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </label>
+      </div>
+</div>
+
+
