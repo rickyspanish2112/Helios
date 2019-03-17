@@ -9,17 +9,16 @@
         [expandedHeight]="customExpandedHeight"
       >
         <mat-panel-title> <h4>Declaration Type</h4> </mat-panel-title>
-        <label>
-          <input
-            class="form-check-input"
-            type="checkbox"
-            (change)="checkChanged($event.target.checked)"
-            [checked]="displayTypes"
-          />
-          Display Types?
-        </label>
       </mat-expansion-panel-header>
-
+      <label>
+        <input
+          class="form-check-input"
+          type="checkbox"
+          (change)="checkChanged($event.target.checked)"
+          [checked]="displayTypes"
+        />
+        Display Declaraion Types (expanded) when page reloads?
+      </label>
       <div class="controls-wrapper">
         <div class="flex-container">
           <div class="flex-item-declarationType">
