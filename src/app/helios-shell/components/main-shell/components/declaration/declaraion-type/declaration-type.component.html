@@ -1,4 +1,4 @@
- <div class="declaration-type">
+ <div class="declaration-section">
   <mat-accordion>
     <mat-expansion-panel
       [expanded]="displayTypes === true"
@@ -8,7 +8,7 @@
         [collapsedHeight]="customCollapsedHeight"
         [expandedHeight]="customExpandedHeight"
       >
-        <mat-panel-title> <h4>{{pageTitle}}</h4> </mat-panel-title>
+        <mat-panel-title class="mat-panel-title">{{pageTitle}} </mat-panel-title>
       </mat-expansion-panel-header>
       <label>
         <input
@@ -19,26 +19,23 @@
         />
         Show Declaration Types (expanded) when page reloads?
       </label>
-      <div class="controls-wrapper">
+      <div>
         <div class="flex-container">
-          <div class="flex-item-declarationType">
+          <div>
             <label class="field-label labelAlignment">
               Decln Type [01]:
               <mat-select class="declaration-type-combobox"
               [(value)]="selectedDeclarationType"
               (selectionChange)="onSelectedDeclarationTypeChanged(selectedDeclarationType)">
-              >
-                <mat-option
+                <mat-option style="border-bottom: 1px gray solid"
                   *ngFor="let declarationType of declarationTypes"
-                  [value]="declarationType?.value"
-
-                >
+                  [value]="declarationType?.value">
                   {{ declarationType.value }}
                 </mat-option>
               </mat-select>
             </label>
           </div>
-          <div class="flex-item-badgeCode">
+          <div flex-container>
             <label class="field-label labelAlignment">
               Badge Codes:
               <mat-select class="badge-codes-combobox"
@@ -64,17 +61,9 @@
                 [(ngModel)]="traderReference"
                 class="trader-reference-inputBox"
                 (blur)="onTraderReferenceSet(traderReference)"
+                autocomplete="off"
               />
-              <button
-                mat-button
-                *ngIf="traderReference"
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                (click)="traderReference = ''"
-              >
-                <mat-icon>close</mat-icon>
-              </button>
+
             </label>
           </div>
         </div>

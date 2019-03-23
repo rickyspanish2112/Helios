@@ -5,7 +5,9 @@ import { Badge } from 'src/app/helios-shell/model/badge';
 @Component({
   selector: 'app-declaration-type',
   templateUrl: './declaration-type.component.html',
-  styleUrls: ['./declaration-type.component.scss']
+  styleUrls: [
+    './declaration-type.component.scss'
+  ]
 })
 export class DeclarationTypeComponent implements OnInit {
   customCollapsedHeight = '40px';
@@ -39,7 +41,6 @@ export class DeclarationTypeComponent implements OnInit {
 
   onSelectedDeclarationTypeChanged(value: Declarationtype) {
     this.declarationTypeSelected.emit(value);
-
   }
 
   onTraderReferenceSet(value: string) {

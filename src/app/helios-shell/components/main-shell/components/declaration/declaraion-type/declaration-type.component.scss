@@ -1,42 +1,7 @@
-.declaration-type {
-width: 95%;
-margin-top: 20px;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 20px;
-}
+@import url('../../../../../../../scss/flex-box.scss');
+@import url('../../../../../../../scss/declaration.scss');
 
-  .flex-container {
-    display: flex;
-    background-color: DodgerBlue;
-    flex-wrap: wrap;
-  }
-
-  .flex-container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-    font-size: 30px;
-  }
-
-  .controls-wrapper {
-  border: DodgerBlue 2px solid;
-  border-radius: 8px;
-  }
-
-  .flex-item-declarationType {
-    overflow-y: auto;
-    margin-right: 5px;
-    flex-grow: 1;
-  }
-
-  .flex-item-badgeCode {
-    overflow-y: auto;
-    margin-right: 5px;
-    flex-grow: 5;
-  }
-
-  .labelAlignment {
+.labelAlignment {
     margin-left: 3px;
     padding-top: 8px;
     font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
@@ -54,10 +19,7 @@ margin-bottom: 20px;
     width: 350px;
     max-width: 350px;
     font-size: 12px;
-    border: #673ab7 2px solid;
-    border-radius: 5px;
-    height: 15px;
-    padding: 9px;
+    border-bottom: 1px gray solid
   }
 
   @media all and (max-width: 800px) {
@@ -65,21 +27,15 @@ margin-bottom: 20px;
       width: 190px;
       max-width: 190px;
       font-size: 12px;
-      border: #673ab7 2px solid;
-      border-radius: 5px;
-      height: 15px;
-      padding: 9px;
+      border-bottom: 1px gray solid
     }
   }
 
   .badge-codes-combobox {
-    width: 200px;
-    max-width: 200px;
+    width: 360px;
+    max-width: 360px;
     font-size: 12px;
-    border: #673ab7 2px solid;
-    border-radius: 5px;
-    height: 15px;
-    padding: 9px;
+    border-bottom: 1px gray solid
   }
 
   @media all and (max-width: 800px) {
@@ -87,35 +43,21 @@ margin-bottom: 20px;
       width: 200px;
       max-width: 200px;
       font-size: 12px;
-      border: #673ab7 2px solid;
-      border-radius: 5px;
-      height: 15px;
-      padding: 9px;
+      border-bottom: 1px gray solid
     }
   }
 
   .trader-reference-inputBox {
+    width: 310px;
+    max-width: 310px;
+    background-color: inherit;
     border: none;
-    background: none;
-    padding: 0;
-    text-align: left;
-    font-size: 12px;
-    border: #673ab7 2px solid;
-    border-radius: 5px;
-    height: 15px;
-    padding: 9px;
-    width: 350px;
+    border-bottom: 1px gray solid;
   }
 
   @media all and (max-width: 800px) {
     .trader-reference-inputBox {
-      width: 140px;
-      max-width: 140px;
-      font-size: 12px;
-      border: #673ab7 2px solid;
-      border-radius: 5px;
-      height: 15px;
-      padding: 9px;
+      width: 147px;
     }
   }
   ::ng-deep .mat-option-text.mat-option-text {
@@ -125,3 +67,9 @@ margin-bottom: 20px;
     margin: 2px;
     line-height: 15px;
   }
+
+  // Turns off animation when input box is selected
+  ::ng-deep:focus {
+    outline: none;
+    border: 0;
+ }

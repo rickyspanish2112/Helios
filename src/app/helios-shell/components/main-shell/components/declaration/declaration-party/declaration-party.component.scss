@@ -1,12 +1,16 @@
-.declaration-parties {
+@import url('../../../../../../../scss/flex-box.scss');
+@import url('../../../../../../../scss/declaration.scss');
+
+/* .declaration-parties {
   width: 95%;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  }
+  } */
 
-  .flex-container {
+
+/*   .flex-container {
     display: flex;
     background-color: DodgerBlue;
     flex-wrap: wrap;
@@ -17,12 +21,12 @@
     margin: 10px;
     padding: 20px;
     font-size: 30px;
-  }
+  } */
 
-  .controls-wrapper {
+/*   .controls-wrapper {
   border: DodgerBlue 2px solid;
   border-radius: 8px;
-  }
+  } */
 
   .declaration-parties-wrapper{
     border: DodgerBlue 2px solid;
