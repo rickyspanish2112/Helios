@@ -1,11 +1,11 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  selector: 'app-account',
+  templateUrl: './account.component.html',
+  styleUrls: ['./account.component.scss']
 })
-export class InputComponent implements OnInit {
+export class AccountComponent implements OnInit {
   shortCodeCaption = 'Short Code:';
   shortCode = '';
   accountName = '';

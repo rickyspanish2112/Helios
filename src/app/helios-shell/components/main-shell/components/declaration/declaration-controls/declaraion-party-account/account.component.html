@@ -1,0 +1,30 @@
+  <div>
+  <label class="labelAlignment">
+    {{shortCodeCaption}}
+    <input
+      matInput
+      type="text"
+      [(ngModel)]="shortCode"
+      class="inputBox"
+      autocomplete="off"
+    />
+  </label>
+  <div class="input-box-spacer"></div>
+</div>
+<div>
+    <div>
+        <label class="labelAlignment">
+         Acct. Name:
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="accountName"
+            class="inputBox"
+            (ngModelChange)="onAccountNameOnPropertyChanged(accountName)"
+            autocomplete="off"
+          />
+        </label>
+      </div>
+</div>
+
+

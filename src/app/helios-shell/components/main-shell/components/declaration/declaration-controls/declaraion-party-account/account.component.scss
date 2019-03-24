@@ -1,4 +1,10 @@
-.labelAlignment {
+@import url('../../../../../../../../scss/declaration.scss');
+
+.input-box-spacer{
+  margin: 20px;
+}
+
+/* .labelAlignment {
   margin-left: 3px;
   padding-top: 8px;
   font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
@@ -45,5 +51,5 @@
     .party-inputBox-margin {
       margin-top: 3px;
     }
-  }
+  } */
 

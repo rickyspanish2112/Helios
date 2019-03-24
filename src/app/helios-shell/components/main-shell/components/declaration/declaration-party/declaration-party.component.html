@@ -10,61 +10,68 @@
         >
       </mat-expansion-panel-header>
       <div>
-        <div class="flex-container" >
-            <mat-tab-group class="tab-container">
-                <mat-tab>
-                  <ng-template mat-tab-label>
-                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-                    Importer
-                  </ng-template>
-                  <h6>Content 1</h6>
-                </mat-tab>
-
-                <mat-tab>
-                  <ng-template mat-tab-label>
-                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-                    Exporter
-                  </ng-template>
-                  <h6>Content 2</h6>
-                </mat-tab>
-
-                <mat-tab>
-                  <ng-template mat-tab-label>
-                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-                    Declarant
-                  </ng-template>
-
-                  <h6>Content 3</h6>
-                </mat-tab>
-
-                <mat-tab>
-                    <ng-template mat-tab-label>
-                      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-                      Buyer
-                    </ng-template>
-                    <h6>Content 6</h6>
-                  </mat-tab>
-
-                  <mat-tab>
-                      <ng-template mat-tab-label>
-                        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-                        Seller
-                      </ng-template>
-                      <h6>Content 7</h6>
-                    </mat-tab>
-
-                    <mat-tab>
-                        <ng-template mat-tab-label>
-                          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-                          Representitive
-                        </ng-template>
-                        <h6>Content 8</h6>
-                      </mat-tab>
-
-
-              </mat-tab-group>
+          <label>
+              <input
+                class="form-check-input"
+                type="checkbox"
+              />
+              Show Declaration Parties (expanded) when page reloads?
+            </label>
           </div>
+      <div>
+        <div class="flex-container">
+          <mat-tab-group class="tab-container">
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Importer
+              </ng-template>
+              <app-declaration-party-tab-content></app-declaration-party-tab-content>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Exporter
+              </ng-template>
+              <h6>Content 2</h6>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Declarant
+              </ng-template>
+
+              <h6>Content 3</h6>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Buyer
+              </ng-template>
+              <h6>Content 6</h6>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Seller
+              </ng-template>
+              <h6>Content 7</h6>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                Representitive
+              </ng-template>
+              <h6>Content 8</h6>
+            </mat-tab>
+          </mat-tab-group>
         </div>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

@@ -1,0 +1,22 @@
+@import url('../../../../../../../../scss/declaration.scss');
+@import url('../../../../../../../../scss/flex-box.scss');
+
+.labelAlignment {
+  margin-left: 3px;
+  padding-top: 8px;
+  font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+}
+
+@media all and (max-width: 800px) {
+  .labelAlignment {
+    margin-left: 0px;
+    padding-top: 8px;
+    font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+  }
+}
+
+// Turns off animation when input box is selected
+::ng-deep:focus {
+  outline: none;
+  border: 0;
+}

@@ -5,10 +5,37 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
-  }
+}
 
-  .mat-panel-title{
-    font-weight: bold;
-    font-size: 1.2em;
-  }
+.mat-panel-title {
+  font-weight: bold;
+  font-size: 1.2em;
+}
 
+.labelAlignment {
+  margin-left: 3px;
+  padding-top: 8px;
+  font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+}
+
+@media all and (max-width: 800px) {
+  .labelAlignment {
+    margin-left: 0px;
+    padding-top: 8px;
+    font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+  }
+}
+
+.inputBox {
+  width: 310px;
+  max-width: 310px;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px gray solid;
+}
+
+@media all and (max-width: 800px) {
+  .inputBox {
+    width: 147px;
+  }
+}
