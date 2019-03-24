@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
+
 
 @Component({
   selector: 'app-declaration-party',

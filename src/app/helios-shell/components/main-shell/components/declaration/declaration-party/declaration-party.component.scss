@@ -28,12 +28,36 @@
   border-radius: 8px;
   } */
 
+.tab-container{
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 8px;
+}
+
+
+@media all and (max-width: 800px) {
+  .tab-container {
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 8px;
+  }
+}
+
   .declaration-parties-wrapper{
     border: DodgerBlue 2px solid;
   border-radius: 8px;
   }
 
-  .flex-item-declarationPary-left {
+  .example-tab-icon {
+    margin-right: 8px;
+  }
+
+/*   .flex-item-declarationPary-left {
     overflow-y: auto;
     margin-right: 5px;
     //flex-grow: 0;
@@ -67,4 +91,4 @@
       width: 350px;
       flex: 0 0 350px;
     }
-  }
+  } */

@@ -1,63 +1,70 @@
-  <div class="declaration-section">
-    <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header
+<div class="declaration-section">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header
         [collapsedHeight]="customCollapsedHeight"
-        [expandedHeight]="customExpandedHeight">
-          <mat-panel-title class="mat-panel-title"> {{pageTitle}}</mat-panel-title>
-        </mat-expansion-panel-header>
-        <div>
-          <div class="flex-container">
-            <div class="flex-item-declarationPary-left">
-              <mat-accordion class="party-headers-align">
-                <mat-expansion-panel hideToggle>
-                  <mat-expansion-panel-header>
-                    <mat-panel-title>{{exporterPartyTitle}}</mat-panel-title>
-                    <mat-panel-description>
-                      Account Name: {{exporterAccountName}}
-                    </mat-panel-description>
-                    <mat-icon>swap_vert</mat-icon>
-                  </mat-expansion-panel-header>
-                  <div class="controls-wrapper">
-                    <div class="flex-container">
-                      <div class="flex-item-party-controls-left">
-                        <app-input
-                        [exporterAccountName]='exporterAccountName'
-                        (accountNameOnPropertyChanged)="onExporterAccountChanged($event)">
-                      </app-input>
-                      </div>
-                    </div>
-                  </div>
-                </mat-expansion-panel>
-              </mat-accordion>
-            </div>
-            <div class="flex-item-declarationPary-right">
-                <mat-accordion class="party-headers-align" hideToggle>
-                  <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                      <mat-panel-title>{{importerPartyTitle}}</mat-panel-title>
-                      <mat-panel-description>
-                        Account Name: {{importerAccountName}}
-                      </mat-panel-description>
-                      <mat-icon>swap_vert</mat-icon>
-                    </mat-expansion-panel-header>
-                    <div class="controls-wrapper">
-                      <div class="flex-container">
-                        <div class="flex-item-party-controls-right">
-                          <app-input
-                          [importerAccountName]='importerAccountName'
-                          (accountNameOnPropertyChanged)="onImporterAccountChanged($event)">
-                        </app-input>
-                        </div>
-                      </div>
-                    </div>
-                  </mat-expansion-panel>
-                </mat-accordion>
-              </div>
+        [expandedHeight]="customExpandedHeight"
+      >
+        <mat-panel-title class="mat-panel-title">
+          {{ pageTitle }}</mat-panel-title
+        >
+      </mat-expansion-panel-header>
+      <div>
+        <div class="flex-container" >
+            <mat-tab-group class="tab-container">
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                    Importer
+                  </ng-template>
+                  <h6>Content 1</h6>
+                </mat-tab>
+
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                    Exporter
+                  </ng-template>
+                  <h6>Content 2</h6>
+                </mat-tab>
+
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                    Declarant
+                  </ng-template>
+
+                  <h6>Content 3</h6>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                      <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                      Buyer
+                    </ng-template>
+                    <h6>Content 6</h6>
+                  </mat-tab>
+
+                  <mat-tab>
+                      <ng-template mat-tab-label>
+                        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                        Seller
+                      </ng-template>
+                      <h6>Content 7</h6>
+                    </mat-tab>
+
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                          <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                          Representitive
+                        </ng-template>
+                        <h6>Content 8</h6>
+                      </mat-tab>
+
+
+              </mat-tab-group>
           </div>
         </div>
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
-
-
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
