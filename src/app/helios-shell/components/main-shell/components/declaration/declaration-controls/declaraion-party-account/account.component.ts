@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
   shortCodeCaption = 'Short Code:';
+  accountNameCaption = 'Acct. Name';
   shortCode = '';
   accountName = '';
 

@@ -1,17 +1,64 @@
 @import url('../../../../../../../../scss/declaration.scss');
 
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+.input-box-spacer{
+  margin: 20px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.postCode-input-width{
+  width: 100px;
+  }
+
+  .country-input-width{
+    width: 50px;
+    }
+
+
+/* .labelAlignment {
+  margin-left: 3px;
+  padding-top: 8px;
+  font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
 }
+
+@media all and (max-width: 800px) {
+  .labelAlignment {
+    margin-left: 0px;
+    padding-top: 8px;
+    font: 400 14px/20px Roboto, Helvetica Neue, sans-serif;
+  }
+}
+
+.party-inputBox-width{
+  width: 220px;
+  }
+
+  @media all and (max-width: 800px) {
+    .party-inputBox-width{
+      width: 165px;
+      }
+  }
+
+  .declaration-parties {
+    margin: 10px;
+  }
+
+  .party-headers-align .mat-expansion-panel-header-title,
+  .party-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+
+  .party-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+  }
+
+  .party-inputBox-margin {
+    margin-left: 5px;
+  }
+
+  @media all and (max-width: 800px) {
+    .party-inputBox-margin {
+      margin-top: 3px;
+    }
+  } */
+

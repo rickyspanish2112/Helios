@@ -1,3 +1,64 @@
-<p>
-  declaration-party-account-address works!
-</p>
+<div>
+  <label class="labelAlignment">
+    {{street1Caption}}
+    <input
+      matInput
+      type="text"
+      class="inputBox"
+      autocomplete="off"
+    />
+  </label>
+  <label class="labelAlignment">
+    {{cityCaption}}
+    <input
+      matInput
+      type="text"
+      class="inputBox"
+      autocomplete="off"
+    />
+  </label>
+  <label class="labelAlignment">
+    {{postCodeCaption}}
+    <input
+      matInput
+      type="text"
+      class="inputBox postCode-input-width"
+      autocomplete="off"
+    />
+  </label>
+  <div class="input-box-spacer"></div>
+</div>
+<div>
+    <div>
+        <label class="labelAlignment">
+          {{street2Caption}}
+          <input
+            matInput
+            type="text"
+            class="inputBox"
+
+            autocomplete="off"
+          />
+        </label>
+        <label class="labelAlignment">
+          {{stateCaption}}
+          <input
+            matInput
+            type="text"
+            class="inputBox"
+            autocomplete="off"
+          />
+          <label class="labelAlignment">
+            {{countryCaption}}
+            <input
+              matInput
+              type="text"
+              class="inputBox country-input-width"
+              autocomplete="off"
+            />
+          </label>
+          <mat-icon (click)="toogleLookup()">help_outline</mat-icon>
+          <div *ngIf="showLookup"></div>
+        </label>
+      </div>
+</div>
